@@ -1,9 +1,20 @@
-function App() {
+import React, { useState } from "react";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Routes from "./components/Routes";
+
+const App = () => {
+  const [darkTheme, setDarkTheme] = useState(false);
+
   return (
-    <div className="App">
-      <h1 className="text-3xl font-bold underline">Google</h1>
+    <div className={darkTheme ? "dark" : ""}>
+      <div className="bg-slate-50 dark:bg-gray-900 dark:text-gray-200 min-h-screen">
+        <Navbar darkTheme={darkTheme} setDarkTheme={setDarkTheme} />
+        <Routes />
+        <Footer />
+      </div>
     </div>
   );
-}
+};
 
 export default App;
