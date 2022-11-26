@@ -2,8 +2,7 @@ import React, { Children, createContext, useContext, useState } from "react";
 
 const ResultContext = createContext();
 
-const baseurl =
-  "https://contextualwebsearch-websearch-v1.p.rapidapi.com/api";
+const baseurl = "https://contextualwebsearch-websearch-v1.p.rapidapi.com/api";
 
 export const ResultContextProvider = ({ children }) => {
   const [results, setResults] = useState([]);
@@ -16,7 +15,7 @@ export const ResultContextProvider = ({ children }) => {
     const options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": "9580848011msh3d6d5bd1ee0eaebp12af80jsn21a7b8674a5a",
+        "X-RapidAPI-Key": process.env.REACT_APP_API_KEY,
         "X-RapidAPI-Host": "contextualwebsearch-websearch-v1.p.rapidapi.com",
       },
     };
