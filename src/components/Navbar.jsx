@@ -8,7 +8,7 @@ const Nabvar = ({ darkTheme, setDarkTheme }) => {
       <div className="flex justify-between items-center space-x-5 w-screen">
         <Link to="/home">
           <p className="text-2xl bg-blue-500 font-bold text-white py-1 px-2 rounded dark:bg-gray-500 dark:text-gray-100">
-            Google🔎
+            ASK ME❔
           </p>
         </Link>
         <button
