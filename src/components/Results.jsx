@@ -13,7 +13,7 @@ const Results = () => {
     if (searchTerm) {
       if (location.pathname === "/images") {
         getResults(
-          `/Search/ImageSearchAPI?q=taylor%20swift&pageNumber=1&pageSize=10&autoCorrect=true`
+          `/Search/ImageSearchAPI?q=${searchTerm}&pageNumber=1&pageSize=12&autoCorrect=true`
         );
       }
       if (location.pathname === "./news") {
@@ -53,15 +53,25 @@ const Results = () => {
       return (
         <div className="flex flex-wrap justify-center items-center">
           {results?.value?.map(
-            ({ thumbnail, url, title, imageWebSearchUrl }) => (
+            ({url, title, imageWebSearchUrl }) => (
               <a
                 className="sm:p-3 p-5"
                 href={imageWebSearchUrl}
                 target="_blank"
                 rel="noreferrer"
               >
-                <img src={url} alt={title}></img>
-                <p className="w-36 break-words text-sm mt-2">{title}</p>
+                <img
+                  src={url}
+                  alt={title}
+                  loading="lazy"
+                  height="150px"
+                  width="150px"
+                ></img>
+                <p className="sm:w-36 w-36 break-words text-sm mt-2 hover:underline">
+                  {title.length > 30
+                    ? `${title.substring(0, 30)}...`
+                    : title}
+                </p>
               </a>
             )
           )}

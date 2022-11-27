@@ -13,7 +13,10 @@ const Search = () => {
   }, [debounceValue]);
 
   return (
-    <div className="relative sm:ml-48 md:ml-71 sm:mt-10 mt-3">
+    <div
+      className="relative"
+      style={{ margin: "auto", marginTop: "2.5rem" }}
+    >
       {text && (
         <button
           type="button"

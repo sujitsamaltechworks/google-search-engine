@@ -16,7 +16,7 @@ const Nabvar = ({ darkTheme, setDarkTheme }) => {
           onClick={() => setDarkTheme(!darkTheme)}
           className="text-xl dark:bg-gray-50 dark:text-gray-900 br-white border rounded-full px-2 hover:shadow-lg"
         >
-          {darkTheme ? "Light🌞" : "Dark🌚"}
+          {darkTheme ? "Light 🌞" : "Dark 🌚"}
         </button>
       </div>
       <Search />
